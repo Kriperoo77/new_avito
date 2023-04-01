@@ -1,0 +1,11 @@
+{% load static %}
+{% extends 'base.html' %}
+{% block title %}
+    {{category}}
+{% endblock %}
+{% block content %}
+<div class="products">
+    {% for products in products %}
+    </div class="products__item product">
+        {% if product.discount_percent > 0 %}
+            <div class="product__discount">
