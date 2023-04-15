@@ -1,17 +1,16 @@
-const currentImage = document.querySelector('.gallery__current img');
-const galleryPreviews = document.querySelectorAll('.gallery__preview');
+// слайдер изображений товара
+const currentImage = document.querySelector('.gallery__item_current img');
+const galleryItems = document.querySelectorAll('.gallery__preview');
 
-if (galleryPreviews) {
-    galleryPreviews.forEach(function(element) {
-        element.addEventListener('click', function(event) {
-            const image = element.querySelector('.gallery__image');
-            if (!element.classList.contains('gallery__preview_active')) {
-                currentImage.src = image.src;
-                galleryPreviews.forEach(function(item) {
-                    item.classList.remove('gallery__preview_active');
-                })
-                element.classList.add('gallery__preview_active');
-            }
-        })
+galleryItems.forEach(function(element) {
+    element.addEventListener('click', function(event) {
+        const img = element.querySelector('img');
+        if (!element.classList.contains('gallery__preview_active')) {
+            currentImage.src = img.src;
+            galleryItems.forEach(function(e) {
+                e.classList.remove('gallery__preview_active');
+            })
+            element.classList.add('gallery__preview_active');
+        }
     })
-}
+})

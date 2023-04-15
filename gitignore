@@ -6,3 +6,7 @@ env
 .env
 db.sqlite
 gitflow.MD
+runserver.bat
+migrations.bat
+dumps
+dump.bat
