@@ -13,6 +13,20 @@ class User(AbstractUser):
         verbose_name='Активен',
         default=False
     )
+    activation_code = models.CharField(
+        max_length=128,
+        blank=True,
+        null=True,
+        verbose_name='Код активации'
+    )
+    email = models.EmailField('email address', blank=True, unique=True)
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
+    def save(self, *args, **kwargs):
+        self.username = self.email
+        super().save(*args, **kwargs)
+
     class Meta:
         verbose_name= 'Пользователь'
         verbose_name_plural = 'Пользователь'

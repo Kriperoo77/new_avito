@@ -1,9 +1,28 @@
-  <form action="{% url 'auth:register' %}" method="post">
-    {% for field in form %}
-    <div class="form__item">
-        {{ field.label_tag }}
-        {{ field }}
-    </div>
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<form action="{% url 'auth:register' %}" method="post">
+  {% csrf_token %}
+  {% if form.not_field_errors %}
+  <div class="form__errors">
+    {% for error in form.not_field_errors %}
+        {{ error }}
     {% endfor %}
-    <buttom type="submit">Зарегестрироваться</buttom>
-  </form>
+  </div>
+  {% endif %}
+  {% for field in form %}
+  <div class="form__item">
+    {{ field.label_tag }}
+    {{ field }}
+  </div>
+  {% if field.errors %}
+  <div class="form__errors">
+    {% for error in field.errors %}
+        {{ error }}
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% endfor %}
+  <button type="submit">Зарегестрироваться</button>
+</form>
+{% endblock %}
