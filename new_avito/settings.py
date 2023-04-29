@@ -138,7 +138,7 @@ AUTH_USER_MODEL = 'custom_auth.User'
 
 # SMTP
 DEFAULT_FROM_EMAIL = 'kibertemp@alexeyzavalin.ru'
-EMAIL_HOST = 'sm'
+EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'kibertemp@alexeyzavalin.ru'
 EMAIL_HOST_PASSWORD = 'kibertemp4321'
