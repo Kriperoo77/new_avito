@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xwf-l1g4u24bany*1wh%+f$#jx47geen6^hrh4)q6uy9p=a3iu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -143,3 +143,5 @@ EMAIL_PORT = 465
 EMAIL_HOST_USER = 'kibertemp@alexeyzavalin.ru'
 EMAIL_HOST_PASSWORD = 'kibertemp4321'
 EMAIL_USE_SSL = True
+
+LOGIN_REDIRECT_URL = 'main:main'
