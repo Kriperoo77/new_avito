@@ -21,6 +21,4 @@ class UserRegisterForm(UserCreationForm):
 
 
 class UserLoginForm(AuthenticationForm):
-    class Meta:
-        model = User
-        fields = ('email', 'password')
+    pass
