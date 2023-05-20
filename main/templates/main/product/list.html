@@ -24,7 +24,7 @@
                 </div>
                 <button
                 data-id="{{ product.id }}"
-                data-url=""
+                data-url="{% url 'cart:add_to_cart' %}"
                 class="product__add"
                 >
                     В корзину
